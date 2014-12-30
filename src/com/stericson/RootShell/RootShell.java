@@ -22,11 +22,11 @@
 package com.stericson.RootShell;
 
 
-import android.util.Log;
-
 import com.stericson.RootShell.exceptions.RootDeniedException;
 import com.stericson.RootShell.execution.Command;
 import com.stericson.RootShell.execution.Shell;
+
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,14 +37,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeoutException;
 
-public class RootShell
-{
+public class RootShell {
 
     // --------------------
     // # Public Variables #
     // --------------------
 
     public static boolean debugMode = false;
+
     public static final String version = "RootShell v1.0";
 
     /**
@@ -70,21 +70,15 @@ public class RootShell
 
     /**
      * This will close all open shells.
-     *
-     * @throws IOException
      */
-    public static void closeAllShells() throws IOException
-    {
+    public static void closeAllShells() throws IOException {
         Shell.closeAll();
     }
 
     /**
      * This will close the custom shell that you opened.
-     *
-     * @throws IOException
      */
-    public static void closeCustomShell() throws IOException
-    {
+    public static void closeCustomShell() throws IOException {
         Shell.closeCustomShell();
     }
 
@@ -92,16 +86,11 @@ public class RootShell
      * This will close either the root shell or the standard shell depending on what you specify.
      *
      * @param root a <code>boolean</code> to specify whether to close the root shell or the standard shell.
-     * @throws IOException
      */
-    public static void closeShell(boolean root) throws IOException
-    {
-        if (root)
-        {
+    public static void closeShell(boolean root) throws IOException {
+        if (root) {
             Shell.closeRootShell();
-        }
-        else
-        {
+        } else {
             Shell.closeShell();
         }
     }
@@ -113,8 +102,7 @@ public class RootShell
      *             file and its name.
      * @return a boolean that will indicate whether or not the file exists.
      */
-    public static boolean exists(final String file)
-    {
+    public static boolean exists(final String file) {
         return exists(file, false);
     }
 
@@ -126,52 +114,41 @@ public class RootShell
      * @param isDir boolean that represent whether or not we are looking for a directory
      * @return a boolean that will indicate whether or not the file exists.
      */
-    public static boolean exists(final String file, boolean isDir)
-    {
+    public static boolean exists(final String file, boolean isDir) {
         final List<String> result = new ArrayList<String>();
 
         String cmdToExecute = "ls " + (isDir ? "-d " : " ");
 
-        Command command = new Command(0, false, cmdToExecute + file)
-        {
+        Command command = new Command(0, false, cmdToExecute + file) {
             @Override
-            public void output(int arg0, String arg1)
-            {
+            public void output(int arg0, String arg1) {
                 RootShell.log(arg1);
                 result.add(arg1);
             }
         };
 
-        try
-        {
+        try {
             //Try without root...
             RootShell.getShell(false).add(command);
             commandWait(RootShell.getShell(false), command);
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return false;
         }
 
-        for (String line : result)
-        {
-            if (line.trim().equals(file))
-            {
+        for (String line : result) {
+            if (line.trim().equals(file)) {
                 return true;
             }
         }
 
         result.clear();
 
-        try
-        {
+        try {
             RootShell.getShell(true).add(command);
             commandWait(RootShell.getShell(true), command);
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return false;
         }
 
@@ -179,10 +156,8 @@ public class RootShell
         List<String> final_result = new ArrayList<String>();
         final_result.addAll(result);
 
-        for (String line : final_result)
-        {
-            if (line.trim().equals(file))
-            {
+        for (String line : final_result) {
+            if (line.trim().equals(file)) {
                 return true;
             }
         }
@@ -195,8 +170,7 @@ public class RootShell
      * @param binaryName String that represent the binary to find.
      * @return <code>List<String></code> containing the locations the binary was found at.
      */
-    public static List<String> findBinary(final String binaryName)
-    {
+    public static List<String> findBinary(final String binaryName) {
         boolean found = false;
 
         final List<String> list = new ArrayList<String>();
@@ -208,17 +182,12 @@ public class RootShell
         RootShell.log("Checking for " + binaryName);
 
         //Try to use stat first
-        try
-        {
-            for (final String path : places)
-            {
-                Command cc = new Command(0, false, "stat " + path + binaryName)
-                {
+        try {
+            for (final String path : places) {
+                Command cc = new Command(0, false, "stat " + path + binaryName) {
                     @Override
-                    public void commandOutput(int id, String line)
-                    {
-                        if (line.contains("File: ") && line.contains(binaryName))
-                        {
+                    public void commandOutput(int id, String line) {
+                        if (line.contains("File: ") && line.contains(binaryName)) {
                             list.add(path);
 
                             RootShell.log(binaryName + " was found here: " + path);
@@ -236,57 +205,41 @@ public class RootShell
             }
 
             found = !list.isEmpty();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             RootShell.log(binaryName + " was not found, more information MAY be available with Debugging on.");
         }
 
-        if (!found)
-        {
+        if (!found) {
             RootShell.log("Trying second method");
 
-            for (String where : places)
-            {
-                if (RootShell.exists(where + binaryName))
-                {
+            for (String where : places) {
+                if (RootShell.exists(where + binaryName)) {
                     RootShell.log(binaryName + " was found here: " + where);
                     list.add(where);
                     found = true;
-                }
-                else
-                {
+                } else {
                     RootShell.log(binaryName + " was NOT found here: " + where);
                 }
             }
         }
 
-        if (!found)
-        {
+        if (!found) {
             RootShell.log("Trying third method");
 
-            try
-            {
+            try {
                 List<String> paths = RootShell.getPath();
 
-                if (paths != null)
-                {
-                    for (String path : paths)
-                    {
-                        if (RootShell.exists(path + "/" + binaryName))
-                        {
+                if (paths != null) {
+                    for (String path : paths) {
+                        if (RootShell.exists(path + "/" + binaryName)) {
                             RootShell.log(binaryName + " was found here: " + path);
                             list.add(path);
-                        }
-                        else
-                        {
+                        } else {
                             RootShell.log(binaryName + " was NOT found here: " + path);
                         }
                     }
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 RootShell.log(binaryName + " was not found, more information MAY be available with Debugging on.");
             }
         }
@@ -301,8 +254,7 @@ public class RootShell
      *
      * @return <code>List<String></code> A List of Strings representing the environment variable $PATH
      */
-    public static List<String> getPath()
-    {
+    public static List<String> getPath() {
         return Arrays.asList(System.getenv("PATH").split(":"));
     }
 
@@ -314,18 +266,11 @@ public class RootShell
      * @param timeout      an <code>int</code> to Indicate the length of time to wait before giving up on opening a shell.
      * @param shellContext the context to execute the shell with
      * @param retry        a <code>int</code> to indicate how many times the ROOT shell should try to open with root priviliges...
-     * @throws java.util.concurrent.TimeoutException
-     * @throws com.stericson.RootShell.exceptions.RootDeniedException
-     * @throws java.io.IOException
      */
-    public static Shell getShell(boolean root, int timeout, Shell.ShellContext shellContext, int retry) throws IOException, TimeoutException, RootDeniedException
-    {
-        if (root)
-        {
+    public static Shell getShell(boolean root, int timeout, Shell.ShellContext shellContext, int retry) throws IOException, TimeoutException, RootDeniedException {
+        if (root) {
             return Shell.startRootShell(timeout, shellContext, retry);
-        }
-        else
-        {
+        } else {
             return Shell.startShell(timeout);
         }
     }
@@ -337,12 +282,8 @@ public class RootShell
      * @param root         a <code>boolean</code> to Indicate whether or not you want to open a root shell or a standard shell
      * @param timeout      an <code>int</code> to Indicate the length of time to wait before giving up on opening a shell.
      * @param shellContext the context to execute the shell with
-     * @throws TimeoutException
-     * @throws com.stericson.RootShell.exceptions.RootDeniedException
-     * @throws IOException
      */
-    public static Shell getShell(boolean root, int timeout, Shell.ShellContext shellContext) throws IOException, TimeoutException, RootDeniedException
-    {
+    public static Shell getShell(boolean root, int timeout, Shell.ShellContext shellContext) throws IOException, TimeoutException, RootDeniedException {
         return getShell(root, timeout, shellContext, 3);
     }
 
@@ -352,12 +293,8 @@ public class RootShell
      *
      * @param root         a <code>boolean</code> to Indicate whether or not you want to open a root shell or a standard shell
      * @param shellContext the context to execute the shell with
-     * @throws TimeoutException
-     * @throws com.stericson.RootShell.exceptions.RootDeniedException
-     * @throws IOException
      */
-    public static Shell getShell(boolean root, Shell.ShellContext shellContext) throws IOException, TimeoutException, RootDeniedException
-    {
+    public static Shell getShell(boolean root, Shell.ShellContext shellContext) throws IOException, TimeoutException, RootDeniedException {
         return getShell(root, 0, shellContext, 3);
     }
 
@@ -367,12 +304,8 @@ public class RootShell
      *
      * @param root    a <code>boolean</code> to Indicate whether or not you want to open a root shell or a standard shell
      * @param timeout an <code>int</code> to Indicate the length of time to wait before giving up on opening a shell.
-     * @throws TimeoutException
-     * @throws com.stericson.RootShell.exceptions.RootDeniedException
-     * @throws IOException
      */
-    public static Shell getShell(boolean root, int timeout) throws IOException, TimeoutException, RootDeniedException
-    {
+    public static Shell getShell(boolean root, int timeout) throws IOException, TimeoutException, RootDeniedException {
         return getShell(root, timeout, Shell.defaultContext, 3);
     }
 
@@ -381,12 +314,8 @@ public class RootShell
      * and for closing the shell when you are done using it.
      *
      * @param root a <code>boolean</code> to Indicate whether or not you want to open a root shell or a standard shell
-     * @throws TimeoutException
-     * @throws com.stericson.RootShell.exceptions.RootDeniedException
-     * @throws IOException
      */
-    public static Shell getShell(boolean root) throws IOException, TimeoutException, RootDeniedException
-    {
+    public static Shell getShell(boolean root) throws IOException, TimeoutException, RootDeniedException {
         return RootShell.getShell(root, 0);
     }
 
@@ -394,22 +323,17 @@ public class RootShell
      * @return <code>true</code> if your app has been given root access.
      * @throws TimeoutException if this operation times out. (cannot determine if access is given)
      */
-    public static boolean isAccessGiven()
-    {
+    public static boolean isAccessGiven() {
         final Set<String> ID = new HashSet<String>();
         final int IAG = 158;
-        
-        try
-        {
+
+        try {
             RootShell.log("Checking for Root access");
 
-            Command command = new Command(IAG, false, "id")
-            {
+            Command command = new Command(IAG, false, "id") {
                 @Override
-                public void output(int id, String line)
-                {
-                    if (id == IAG)
-                    {
+                public void output(int id, String line) {
+                    if (id == IAG) {
                         ID.addAll(Arrays.asList(line.split(" ")));
                     }
 
@@ -421,21 +345,17 @@ public class RootShell
             commandWait(Shell.startRootShell(), command);
 
             //parse the userid
-            for (String userid : ID)
-            {
+            for (String userid : ID) {
                 RootShell.log(userid);
 
-                if (userid.toLowerCase().contains("uid=0"))
-                {
+                if (userid.toLowerCase().contains("uid=0")) {
                     RootShell.log("Access Given");
                     return true;
                 }
             }
 
             return false;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -444,8 +364,7 @@ public class RootShell
     /**
      * @return <code>true</code> if su was found.
      */
-    public static boolean isRootAvailable()
-    {
+    public static boolean isRootAvailable() {
         return (RootShell.findBinary("su")).size() > 0;
     }
 
@@ -461,8 +380,7 @@ public class RootShell
      *
      * @param msg The message to output.
      */
-    public static void log(String msg)
-    {
+    public static void log(String msg) {
         log(null, msg, 3, null);
     }
 
@@ -479,8 +397,7 @@ public class RootShell
      * @param TAG Optional parameter to define the tag that the Log will use.
      * @param msg The message to output.
      */
-    public static void log(String TAG, String msg)
-    {
+    public static void log(String TAG, String msg) {
         log(TAG, msg, 3, null);
     }
 
@@ -498,8 +415,7 @@ public class RootShell
      * @param type The type of log, 1 for verbose, 2 for error, 3 for debug
      * @param e    The exception that was thrown (Needed for errors)
      */
-    public static void log(String msg, int type, Exception e)
-    {
+    public static void log(String msg, int type, Exception e) {
         log(null, msg, type, e);
     }
 
@@ -521,8 +437,7 @@ public class RootShell
      *
      * @return true if logging is enabled
      */
-    public static boolean islog()
-    {
+    public static boolean islog() {
         return debugMode;
     }
 
@@ -541,19 +456,14 @@ public class RootShell
      * @param type The type of log, 1 for verbose, 2 for error, 3 for debug
      * @param e    The exception that was thrown (Needed for errors)
      */
-    public static void log(String TAG, String msg, int type, Exception e)
-    {
-        if (msg != null && !msg.equals(""))
-        {
-            if (debugMode)
-            {
-                if (TAG == null)
-                {
+    public static void log(String TAG, String msg, int type, Exception e) {
+        if (msg != null && !msg.equals("")) {
+            if (debugMode) {
+                if (TAG == null) {
                     TAG = version;
                 }
 
-                switch (type)
-                {
+                switch (type) {
                     case 1:
                         Log.v(TAG, msg);
                         break;
@@ -572,46 +482,33 @@ public class RootShell
     // # Public Methods #
     // --------------------
 
-    private static void commandWait(Shell shell, Command cmd) throws Exception
-    {
-        while (!cmd.isFinished())
-        {
+    private static void commandWait(Shell shell, Command cmd) throws Exception {
+        while (!cmd.isFinished()) {
 
             RootShell.log(version, shell.getCommandQueuePositionString(cmd));
 
-            synchronized (cmd)
-            {
-                try
-                {
-                    if (!cmd.isFinished())
-                    {
+            synchronized (cmd) {
+                try {
+                    if (!cmd.isFinished()) {
                         cmd.wait(2000);
                     }
-                }
-                catch (InterruptedException e)
-                {
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
-            if (!cmd.isExecuting() && !cmd.isFinished())
-            {
-                if (!shell.isExecuting && !shell.isReading)
-                {
+            if (!cmd.isExecuting() && !cmd.isFinished()) {
+                if (!shell.isExecuting && !shell.isReading) {
                     RootShell.log(version, "Waiting for a command to be executed in a shell that is not executing and not reading! \n\n Command: " + cmd.getCommand());
                     Exception e = new Exception();
                     e.setStackTrace(Thread.currentThread().getStackTrace());
                     e.printStackTrace();
-                }
-                else if (shell.isExecuting && !shell.isReading)
-                {
+                } else if (shell.isExecuting && !shell.isReading) {
                     RootShell.log(version, "Waiting for a command to be executed in a shell that is executing but not reading! \n\n Command: " + cmd.getCommand());
                     Exception e = new Exception();
                     e.setStackTrace(Thread.currentThread().getStackTrace());
                     e.printStackTrace();
-                }
-                else
-                {
+                } else {
                     RootShell.log(version, "Waiting for a command to be executed in a shell that is not reading! \n\n Command: " + cmd.getCommand());
                     Exception e = new Exception();
                     e.setStackTrace(Thread.currentThread().getStackTrace());

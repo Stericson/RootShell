@@ -12,7 +12,16 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.stericson.RootShell" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a1bae07-9cbc-43de-ae52-2315aa1c2e84" name="Default" comment="" />
+    <list default="true" id="7a1bae07-9cbc-43de-ae52-2315aa1c2e84" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/exceptions/RootDeniedException.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/exceptions/RootDeniedException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="RootShell.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,23 +43,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Manifest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/com/stericson/RootShell/Manifest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="228">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Command.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.4303484" vertical-offset="2583" max-vertical-offset="7220">
-              <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.33043477" vertical-offset="4978" max-vertical-offset="6460">
+              <caret line="270" column="22" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
               <folding>
-                <element signature="e#0#10289#0" expanded="true" />
+                <element signature="e#0#9864#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -60,13 +59,9 @@
       <file leaf-file-name="RootClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7885">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8793#9144#0" expanded="true" />
-                <element signature="e#13778#14016#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="6422">
+              <caret line="23" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,16 +69,9 @@
       <file leaf-file-name="RootShell.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="18.327587" vertical-offset="8948" max-vertical-offset="11970">
-              <caret line="415" column="50" selection-start-line="415" selection-start-column="50" selection-end-line="415" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#21202#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#4016#4024#0" expanded="true" />
-                <element signature="e#5103#5111#0" expanded="true" />
-                <element signature="e#5670#5678#0" expanded="true" />
-                <element signature="e#13352#13360#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="7505" max-vertical-offset="10013">
+              <caret line="339" column="50" selection-start-line="339" selection-start-column="50" selection-end-line="339" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,17 +79,9 @@
       <file leaf-file-name="Shell.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15256" max-vertical-offset="22743">
-              <caret line="720" column="78" selection-start-line="720" selection-start-column="78" selection-end-line="720" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#36162#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#3306#3315#0" expanded="true" />
-                <element signature="e#14025#14033#0" expanded="true" />
-                <element signature="e#17569#20616#0" expanded="true" />
-                <element signature="e#20679#20887#0" expanded="true" />
-                <element signature="e#21079#26849#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="13661" max-vertical-offset="19247">
+              <caret line="644" column="78" selection-start-line="644" selection-start-column="78" selection-end-line="644" selection-end-column="78" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,34 +89,9 @@
       <file leaf-file-name="SanityCheckRootShell.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShellTests/SanityCheckRootShell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6034484" vertical-offset="4560" max-vertical-offset="7942">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4769" max-vertical-offset="7942">
               <caret line="251" column="33" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
-              <folding>
-                <marker date="1419968706000" expanded="true" signature="0:1006" placeholder="/.../" />
-                <marker date="1419968706000" expanded="true" signature="1054:1620" placeholder="..." />
-                <marker date="1419968706000" expanded="true" signature="1851:3954" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="4004:4226" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="4063:4148" placeholder="() -&gt; { " />
-                <marker date="1419968706000" expanded="true" signature="4194:4218" placeholder=" }" />
-                <marker date="1419968706000" expanded="true" signature="4232:4339" placeholder="//..." />
-                <marker date="1419968706000" expanded="true" signature="4395:12206" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="4507:4550" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="4586:11845" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="4658:4756" placeholder="//..." />
-                <marker date="1419968706000" expanded="true" signature="7175:7470" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="7295:7452" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="8037:8332" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="8157:8314" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="8900:9195" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="9020:9177" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="9505:11688" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="9670:9894" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="10019:10783" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="10906:11670" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="11914:12200" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="12258:13375" placeholder="{...}" />
-                <marker date="1419968706000" expanded="true" signature="12635:13369" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,8 +121,8 @@
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/CommandCapture.java" />
         <option value="$PROJECT_DIR$/src/com/stericson/RootShellTests/SanityCheckRootShell.java" />
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" />
-        <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" />
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" />
+        <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" />
       </list>
     </option>
   </component>
@@ -202,9 +157,23 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RootShell" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RootShell" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="RootShell" />
@@ -289,28 +258,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RootShell" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RootShell" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RootShell" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,6 +277,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="preferences.sourceCode.General" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntries" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -508,33 +465,33 @@
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -558,18 +515,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java</url>
-          <line>339</line>
+          <line>298</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java</url>
-          <line>858</line>
+          <line>757</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java</url>
-          <line>336</line>
+          <line>310</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -578,10 +535,88 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gen/com/stericson/RootShell/Manifest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="228">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="7220">
+          <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9864#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="7885">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7885" max-vertical-offset="11970">
+          <caret line="415" column="50" selection-start-line="415" selection-start-column="50" selection-end-line="415" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13680" max-vertical-offset="22743">
+          <caret line="720" column="78" selection-start-line="720" selection-start-column="78" selection-end-line="720" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShellTests/SanityCheckRootShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4769" max-vertical-offset="7942">
+          <caret line="251" column="33" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2583" max-vertical-offset="7220">
+          <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9864#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="7885">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8948" max-vertical-offset="11970">
+          <caret line="415" column="50" selection-start-line="415" selection-start-column="50" selection-end-line="415" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13680" max-vertical-offset="22743">
+          <caret line="720" column="78" selection-start-line="720" selection-start-column="78" selection-end-line="720" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShellTests/SanityCheckRootShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4769" max-vertical-offset="7942">
+          <caret line="251" column="33" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -590,19 +625,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36893204" vertical-offset="0" max-vertical-offset="721">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7885">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8793#9144#0" expanded="true" />
-            <element signature="e#13778#14016#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="6422">
+          <caret line="23" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -610,80 +640,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3220339" vertical-offset="0" max-vertical-offset="988">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShellTests/SanityCheckRootShell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6034484" vertical-offset="4560" max-vertical-offset="7942">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4769" max-vertical-offset="7942">
           <caret line="251" column="33" selection-start-line="251" selection-start-column="33" selection-end-line="251" selection-end-column="33" />
-          <folding>
-            <marker date="1419968706000" expanded="true" signature="0:1006" placeholder="/.../" />
-            <marker date="1419968706000" expanded="true" signature="1054:1620" placeholder="..." />
-            <marker date="1419968706000" expanded="true" signature="1851:3954" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="4004:4226" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="4063:4148" placeholder="() -&gt; { " />
-            <marker date="1419968706000" expanded="true" signature="4194:4218" placeholder=" }" />
-            <marker date="1419968706000" expanded="true" signature="4232:4339" placeholder="//..." />
-            <marker date="1419968706000" expanded="true" signature="4395:12206" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="4507:4550" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="4586:11845" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="4658:4756" placeholder="//..." />
-            <marker date="1419968706000" expanded="true" signature="7175:7470" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="7295:7452" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="8037:8332" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="8157:8314" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="8900:9195" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="9020:9177" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="9505:11688" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="9670:9894" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="10019:10783" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="10906:11670" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="11914:12200" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="12258:13375" placeholder="{...}" />
-            <marker date="1419968706000" expanded="true" signature="12635:13369" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.327587" vertical-offset="8948" max-vertical-offset="11970">
-          <caret line="415" column="50" selection-start-line="415" selection-start-column="50" selection-end-line="415" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#21202#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#4016#4024#0" expanded="true" />
-            <element signature="e#5103#5111#0" expanded="true" />
-            <element signature="e#5670#5678#0" expanded="true" />
-            <element signature="e#13352#13360#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="7505" max-vertical-offset="10013">
+          <caret line="339" column="50" selection-start-line="339" selection-start-column="50" selection-end-line="339" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15256" max-vertical-offset="22743">
-          <caret line="720" column="78" selection-start-line="720" selection-start-column="78" selection-end-line="720" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#36162#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3306#3315#0" expanded="true" />
-            <element signature="e#14025#14033#0" expanded="true" />
-            <element signature="e#17569#20616#0" expanded="true" />
-            <element signature="e#20679#20887#0" expanded="true" />
-            <element signature="e#21079#26849#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="13661" max-vertical-offset="19247">
+          <caret line="644" column="78" selection-start-line="644" selection-start-column="78" selection-end-line="644" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.4303484" vertical-offset="2583" max-vertical-offset="7220">
-          <caret line="272" column="25" selection-start-line="272" selection-start-column="25" selection-end-line="272" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.33043477" vertical-offset="4978" max-vertical-offset="6460">
+          <caret line="270" column="22" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
           <folding>
-            <element signature="e#0#10289#0" expanded="true" />
+            <element signature="e#0#9864#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
