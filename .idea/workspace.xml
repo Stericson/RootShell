@@ -13,13 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a1bae07-9cbc-43de-ae52-2315aa1c2e84" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/containers/RootClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/exceptions/RootDeniedException.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/exceptions/RootDeniedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/stericson/RootShell/execution/JavaCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RootShell.iws" />
@@ -43,15 +37,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Command.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Command.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33043477" vertical-offset="4978" max-vertical-offset="6460">
-              <caret line="270" column="22" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2603" max-vertical-offset="6460">
+              <caret line="158" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9864#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JavaCommand.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/JavaCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2410148" vertical-offset="0" max-vertical-offset="855">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,6 +127,8 @@
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java" />
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Shell.java" />
         <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java" />
+        <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/JavaCommandCapture.java" />
+        <option value="$PROJECT_DIR$/src/com/stericson/RootShell/execution/JavaCommand.java" />
       </list>
     </option>
   </component>
@@ -272,7 +278,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -286,6 +292,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.stericson.RootShell.execution" />
       <recent name="com.stericson.RootShell.containers" />
       <recent name="com.stericson.RootShellTests" />
       <recent name="com.stericson.RootShell.internal" />
@@ -480,7 +487,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -669,12 +676,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/Command.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33043477" vertical-offset="4978" max-vertical-offset="6460">
-          <caret line="270" column="22" selection-start-line="270" selection-start-column="22" selection-end-line="270" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2603" max-vertical-offset="6460">
+          <caret line="158" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding>
             <element signature="e#0#9864#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/execution/JavaCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2410148" vertical-offset="0" max-vertical-offset="855">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +753,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
