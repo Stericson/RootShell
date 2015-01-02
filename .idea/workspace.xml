@@ -72,8 +72,8 @@
       <file leaf-file-name="RootShell.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37570623" vertical-offset="0" max-vertical-offset="9880">
-              <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.42937854" vertical-offset="6460" max-vertical-offset="10032">
+              <caret line="389" column="44" selection-start-line="389" selection-start-column="26" selection-end-line="389" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -702,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/stericson/RootShell/RootShell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37570623" vertical-offset="0" max-vertical-offset="9880">
-          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.42937854" vertical-offset="6460" max-vertical-offset="10032">
+          <caret line="389" column="44" selection-start-line="389" selection-start-column="26" selection-end-line="389" selection-end-column="44" />
           <folding />
         </state>
       </provider>

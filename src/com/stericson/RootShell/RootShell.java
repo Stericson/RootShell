@@ -385,10 +385,18 @@ public class RootShell {
     }
 
     /**
+     * @return <code>true</code> if BusyBox was found.
+     */
+    public static boolean isBusyboxAvailable()
+    {
+        return (findBinary("busybox")).size() > 0;
+    }
+
+    /**
      * @return <code>true</code> if su was found.
      */
     public static boolean isRootAvailable() {
-        return (RootShell.findBinary("su")).size() > 0;
+        return (findBinary("su")).size() > 0;
     }
 
     /**
