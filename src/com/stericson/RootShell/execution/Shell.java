@@ -262,7 +262,7 @@ public class Shell {
         return command;
     }
 
-    public void useCWD(Context context) throws IOException, TimeoutException, RootDeniedException {
+    public final void useCWD(Context context) throws IOException, TimeoutException, RootDeniedException {
         add(
                 new Command(
                         -1,
@@ -609,9 +609,9 @@ public class Shell {
                     }
                 }
             } catch (IOException e) {
-                RootShell.log(e.getMessage(), 2, e);
+                RootShell.log(e.getMessage(), RootShell.LogLevel.ERROR, e);
             } catch (InterruptedException e) {
-                RootShell.log(e.getMessage(), 2, e);
+                RootShell.log(e.getMessage(), RootShell.LogLevel.ERROR, e);
             } finally {
                 write = 0;
                 closeQuietly(outputStream);
@@ -709,19 +709,27 @@ public class Shell {
                             if (id == totalRead) {
                                 processErrors(command);
 
+
                                 /**
                                  * We will wait a bit for output to be processed...
                                  *
-                                 * MAX, 5 iterations
+                                 * MAX, 10 iterations
                                  */
                                 int iterations = 0;
                                 while (command.totalOutput > command.totalOutputProcessed) {
-                                    if (iterations > 5) {
-                                        Log.e(RootShell.version, "All output not processed! Did you forget the super call for commandOutput???");
+
+                                    final int MAX_ITERATIONS = 10;
+
+                                    if(iterations == 0)
+                                    {
+                                        RootShell.log("Waiting for output to be processed. " + command.totalOutputProcessed + " Of " + command.totalOutput);
+                                    }
+                                    else if (iterations > MAX_ITERATIONS) {
+                                        RootShell.log(RootShell.version, "All output not processed! Did you forget the super call for commandOutput???", RootShell.LogLevel.WARN, null);
+                                        RootShell.log(RootShell.version, command.totalOutputProcessed + " Of " + command.totalOutput + " processed", RootShell.LogLevel.WARN, null);
+                                        RootShell.log(RootShell.version, "This doesn't mean there is a problem, just that we couldn't confirm that all output was processed.", RootShell.LogLevel.WARN, null);
                                         break;
                                     }
-
-                                    RootShell.log("Waiting for output to be processed. " + command.totalOutputProcessed + " Of " + command.totalOutput);
 
                                     try {
                                         iterations++;
@@ -763,7 +771,7 @@ public class Shell {
                 read = 0;
 
             } catch (IOException e) {
-                RootShell.log(e.getMessage(), 2, e);
+                RootShell.log(e.getMessage(), RootShell.LogLevel.ERROR, e);
             } finally {
                 closeQuietly(outputStream);
                 closeQuietly(errorStream);
@@ -794,7 +802,7 @@ public class Shell {
                 command.output(command.id, line);
             }
         } catch (Exception e) {
-            RootShell.log(e.getMessage(), 2, e);
+            RootShell.log(e.getMessage(), RootShell.LogLevel.ERROR, e);
         }
     }
 

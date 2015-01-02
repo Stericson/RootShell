@@ -62,8 +62,14 @@ public class RootShell {
      * <p/>
      * The default is 20000ms
      */
-    public static int default_Command_Timeout = 20000;
+    public static int defaultCommandTimeout = 20000;
 
+    public static enum LogLevel {
+        VERBOSE,
+        ERROR,
+        DEBUG,
+        WARN
+    }
     // --------------------
     // # Public Methods #
     // --------------------
@@ -121,9 +127,11 @@ public class RootShell {
 
         Command command = new Command(0, false, cmdToExecute + file) {
             @Override
-            public void output(int arg0, String arg1) {
-                RootShell.log(arg1);
-                result.add(arg1);
+            public void commandOutput(int id, String line) {
+                RootShell.log(line);
+                result.add(line);
+
+                super.commandOutput(id, line);
             }
         };
 
@@ -250,6 +258,21 @@ public class RootShell {
     }
 
     /**
+     * This will open or return, if one is already open, a custom shell, you are responsible for managing the shell, reading the output
+     * and for closing the shell when you are done using it.
+     *
+     * @param shellPath a <code>String</code> to Indicate the path to the shell that you want to open.
+     * @param timeout   an <code>int</code> to Indicate the length of time before giving up on opening a shell.
+     * @throws TimeoutException
+     * @throws com.stericson.RootShell.exceptions.RootDeniedException
+     * @throws IOException
+     */
+    public static Shell getCustomShell(String shellPath, int timeout) throws IOException, TimeoutException, RootDeniedException
+    {
+        return RootShell.getCustomShell(shellPath, timeout);
+    }
+
+    /**
      * This will return the environment variable PATH
      *
      * @return <code>List<String></code> A List of Strings representing the environment variable $PATH
@@ -332,7 +355,7 @@ public class RootShell {
 
             Command command = new Command(IAG, false, "id") {
                 @Override
-                public void output(int id, String line) {
+                public void commandOutput(int id, String line) {
                     if (id == IAG) {
                         ID.addAll(Arrays.asList(line.split(" ")));
                     }
@@ -381,7 +404,7 @@ public class RootShell {
      * @param msg The message to output.
      */
     public static void log(String msg) {
-        log(null, msg, 3, null);
+        log(null, msg, LogLevel.DEBUG, null);
     }
 
     /**
@@ -398,7 +421,7 @@ public class RootShell {
      * @param msg The message to output.
      */
     public static void log(String TAG, String msg) {
-        log(TAG, msg, 3, null);
+        log(TAG, msg, LogLevel.DEBUG, null);
     }
 
     /**
@@ -412,10 +435,10 @@ public class RootShell {
      * yourself.
      *
      * @param msg  The message to output.
-     * @param type The type of log, 1 for verbose, 2 for error, 3 for debug
+     * @param type The type of log, 1 for verbose, 2 for error, 3 for debug, 4 for warn
      * @param e    The exception that was thrown (Needed for errors)
      */
-    public static void log(String msg, int type, Exception e) {
+    public static void log(String msg, LogLevel type, Exception e) {
         log(null, msg, type, e);
     }
 
@@ -456,7 +479,7 @@ public class RootShell {
      * @param type The type of log, 1 for verbose, 2 for error, 3 for debug
      * @param e    The exception that was thrown (Needed for errors)
      */
-    public static void log(String TAG, String msg, int type, Exception e) {
+    public static void log(String TAG, String msg, LogLevel type, Exception e) {
         if (msg != null && !msg.equals("")) {
             if (debugMode) {
                 if (TAG == null) {
@@ -464,14 +487,17 @@ public class RootShell {
                 }
 
                 switch (type) {
-                    case 1:
+                    case VERBOSE:
                         Log.v(TAG, msg);
                         break;
-                    case 2:
+                    case ERROR:
                         Log.e(TAG, msg, e);
                         break;
-                    case 3:
+                    case DEBUG:
                         Log.d(TAG, msg);
+                        break;
+                    case WARN:
+                        Log.w(TAG, msg);
                         break;
                 }
             }

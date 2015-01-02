@@ -60,7 +60,7 @@ public class Command {
 
     int id = 0;
 
-    int timeout = RootShell.default_Command_Timeout;
+    int timeout = RootShell.defaultCommandTimeout;
 
     /**
      * Constructor for executing a normal shell command
@@ -157,13 +157,13 @@ public class Command {
         //pass
     }
 
-    protected void finishCommand() {
+    protected final void finishCommand() {
         executing = false;
         finished = true;
         this.notifyAll();
     }
 
-    protected void commandFinished() {
+    protected final void commandFinished() {
         if (!terminated) {
             synchronized (this) {
                 if (mHandler != null && handlerEnabled) {
@@ -194,7 +194,7 @@ public class Command {
         }
     }
 
-    public String getCommand() {
+    public final String getCommand() {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < command.length; i++) {
@@ -208,36 +208,36 @@ public class Command {
         return sb.toString();
     }
 
-    public boolean isExecuting() {
+    public final boolean isExecuting() {
         return executing;
     }
 
-    public boolean isHandlerEnabled() {
+    public final boolean isHandlerEnabled() {
         return handlerEnabled;
     }
 
-    public boolean isFinished() {
+    public final boolean isFinished() {
         return finished;
     }
 
-    public int getExitCode() {
+    public final int getExitCode() {
         return this.exitCode;
     }
 
-    protected void setExitCode(int code) {
+    protected final void setExitCode(int code) {
         synchronized (this) {
             exitCode = code;
         }
     }
 
-    protected void startExecution() {
+    protected final void startExecution() {
         executionMonitor = new ExecutionMonitor();
         executionMonitor.setPriority(Thread.MIN_PRIORITY);
         executionMonitor.start();
         executing = true;
     }
 
-    public void terminate(String reason) {
+    public final void terminate(String reason) {
         try {
             Shell.closeAll();
             RootShell.log("Terminating all shells.");
@@ -246,7 +246,7 @@ public class Command {
         }
     }
 
-    protected void terminated(String reason) {
+    protected final void terminated(String reason) {
         synchronized (Command.this) {
 
             if (mHandler != null && handlerEnabled) {
@@ -267,7 +267,7 @@ public class Command {
         }
     }
 
-    protected void output(int id, String line) {
+    protected final void output(int id, String line) {
         totalOutput++;
 
         if (mHandler != null && handlerEnabled) {
@@ -314,7 +314,7 @@ public class Command {
 
         static final public int COMMAND_TERMINATED = 0x03;
 
-        public void handleMessage(Message msg) {
+        public final void handleMessage(Message msg) {
             int action = msg.getData().getInt(ACTION);
             String text = msg.getData().getString(TEXT);
 
