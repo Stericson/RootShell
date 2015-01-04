@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="RootShell:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/RootShell_jar</output-path>
-    <root id="archive" name="RootShell.jar">
-      <element id="module-output" name="RootShell" />
-    </root>
-  </artifact>
-</component>
