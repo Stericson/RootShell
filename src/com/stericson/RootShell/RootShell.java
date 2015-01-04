@@ -45,7 +45,7 @@ public class RootShell {
 
     public static boolean debugMode = false;
 
-    public static final String version = "RootShell v1.1";
+    public static final String version = "RootShell v1.2";
 
     /**
      * Setting this to false will disable the handler that is used

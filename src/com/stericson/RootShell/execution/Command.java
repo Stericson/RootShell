@@ -34,6 +34,10 @@ import java.io.IOException;
 
 public class Command {
 
+    //directly modified by JavaCommand
+    protected boolean javaCommand = false;
+    protected Context context = null;
+
     public int totalOutput = 0;
 
     public int totalOutputProcessed = 0;
@@ -45,10 +49,6 @@ public class Command {
     boolean executing = false;
 
     String[] command = {};
-
-    boolean javaCommand = false;
-
-    Context context = null;
 
     boolean finished = false;
 
@@ -104,42 +104,6 @@ public class Command {
         this.timeout = timeout;
 
         createHandler(RootShell.handlerEnabled);
-    }
-
-    /**
-     * Constructor for executing Java commands rather than binaries
-     *
-     * @param javaCommand when True, it is a java command.
-     * @param context     needed to execute java command.
-     */
-    public Command(int id, boolean javaCommand, Context context, String... command) {
-        this(id, command);
-        this.javaCommand = javaCommand;
-        this.context = context;
-    }
-
-    /**
-     * Constructor for executing Java commands rather than binaries
-     *
-     * @param javaCommand when True, it is a java command.
-     * @param context     needed to execute java command.
-     */
-    public Command(int id, boolean handlerEnabled, boolean javaCommand, Context context, String... command) {
-        this(id, handlerEnabled, command);
-        this.javaCommand = javaCommand;
-        this.context = context;
-    }
-
-    /**
-     * Constructor for executing Java commands rather than binaries
-     *
-     * @param javaCommand when True, it is a java command.
-     * @param context     needed to execute java command.
-     */
-    public Command(int id, int timeout, boolean javaCommand, Context context, String... command) {
-        this(id, timeout, command);
-        this.javaCommand = javaCommand;
-        this.context = context;
     }
 
     //If you override this you MUST make a final call
