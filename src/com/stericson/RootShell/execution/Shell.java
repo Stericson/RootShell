@@ -255,6 +255,9 @@ public class Shell {
             //Don't add commands while cleaning
             ;
         }
+
+        command.resetCommand();
+
         this.commands.add(command);
 
         this.notifyThreads();
@@ -711,32 +714,30 @@ public class Shell {
 
 
                                 /**
-                                 * We will wait a bit for output to be processed...
+                                 * wait for output to be processed...
                                  *
-                                 * MAX, 10 iterations
                                  */
                                 int iterations = 0;
                                 while (command.totalOutput > command.totalOutputProcessed) {
 
-                                    final int MAX_ITERATIONS = 10;
-
                                     if(iterations == 0)
                                     {
+                                        iterations++;
                                         RootShell.log("Waiting for output to be processed. " + command.totalOutputProcessed + " Of " + command.totalOutput);
-                                    }
-                                    else if (iterations > MAX_ITERATIONS) {
-                                        RootShell.log(RootShell.version, "All output not processed! Did you forget the super call for commandOutput???", RootShell.LogLevel.WARN, null);
-                                        RootShell.log(RootShell.version, command.totalOutputProcessed + " Of " + command.totalOutput + " processed", RootShell.LogLevel.WARN, null);
-                                        RootShell.log(RootShell.version, "This doesn't mean there is a problem, just that we couldn't confirm that all output was processed.", RootShell.LogLevel.WARN, null);
-                                        break;
                                     }
 
                                     try {
-                                        iterations++;
-                                        this.wait(1000);
+
+                                        synchronized (this)
+                                        {
+                                            this.wait(2000);
+                                        }
                                     } catch (Exception e) {
+                                        RootShell.log(e.getMessage());
                                     }
                                 }
+
+                                RootShell.log("Read all output");
 
                                 command.setExitCode(exitCode);
                                 command.commandFinished();
@@ -750,8 +751,6 @@ public class Shell {
                     }
                 }
 
-                RootShell.log("Read all output");
-
                 try {
                     proc.waitFor();
                     proc.destroy();
@@ -763,7 +762,16 @@ public class Shell {
                         command = commands.get(read);
                     }
 
-                    command.terminated("Unexpected Termination.");
+                    if(command.totalOutput < command.totalOutputProcessed)
+                    {
+                        command.terminated("All output not processed!");
+                        command.terminated("Did you forget the super.commandOutput call or are you waiting on the command object?");
+                    }
+                    else
+                    {
+                        command.terminated("Unexpected Termination.");
+                    }
+
                     command = null;
                     read++;
                 }

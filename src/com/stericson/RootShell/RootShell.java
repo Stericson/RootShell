@@ -45,7 +45,7 @@ public class RootShell {
 
     public static boolean debugMode = false;
 
-    public static final String version = "RootShell v1.2";
+    public static final String version = "RootShell v1.3";
 
     /**
      * Setting this to false will disable the handler that is used
@@ -176,29 +176,50 @@ public class RootShell {
 
     /**
      * @param binaryName String that represent the binary to find.
+     *
      * @return <code>List<String></code> containing the locations the binary was found at.
      */
     public static List<String> findBinary(final String binaryName) {
+        return findBinary(binaryName, null);
+    }
+
+    /**
+     * @param binaryName <code>String</code> that represent the binary to find.
+     * @param searchPaths <code>List<String></code> which contains the paths to search for this binary in.
+     *
+     * @return <code>List<String></code> containing the locations the binary was found at.
+     */
+    public static List<String> findBinary(final String binaryName, List<String> searchPaths) {
+
+        final List<String> foundPaths = new ArrayList<String>();
+
         boolean found = false;
 
-        final List<String> list = new ArrayList<String>();
-        String[] places = {
-                "/sbin/", "/system/bin/", "/system/xbin/", "/data/local/xbin/",
-                "/data/local/bin/", "/system/sd/xbin/", "/system/bin/failsafe/", "/data/local/"
-        };
+        if(searchPaths == null)
+        {
+            searchPaths = RootShell.getPath();
+        }
 
         RootShell.log("Checking for " + binaryName);
 
         //Try to use stat first
         try {
-            for (final String path : places) {
+            for (String path : searchPaths) {
+
+                if(!path.endsWith("/"))
+                {
+                    path += "/";
+                }
+
+                final String currentPath = path;
+
                 Command cc = new Command(0, false, "stat " + path + binaryName) {
                     @Override
                     public void commandOutput(int id, String line) {
                         if (line.contains("File: ") && line.contains(binaryName)) {
-                            list.add(path);
+                            foundPaths.add(currentPath);
 
-                            RootShell.log(binaryName + " was found here: " + path);
+                            RootShell.log(binaryName + " was found here: " + currentPath);
                         }
 
                         RootShell.log(line);
@@ -212,7 +233,7 @@ public class RootShell {
 
             }
 
-            found = !list.isEmpty();
+            found = !foundPaths.isEmpty();
         } catch (Exception e) {
             RootShell.log(binaryName + " was not found, more information MAY be available with Debugging on.");
         }
@@ -220,41 +241,25 @@ public class RootShell {
         if (!found) {
             RootShell.log("Trying second method");
 
-            for (String where : places) {
-                if (RootShell.exists(where + binaryName)) {
-                    RootShell.log(binaryName + " was found here: " + where);
-                    list.add(where);
-                    found = true;
+            for (String path : searchPaths) {
+
+                if(!path.endsWith("/"))
+                {
+                    path += "/";
+                }
+
+                if (RootShell.exists(path + binaryName)) {
+                    RootShell.log(binaryName + " was found here: " + path);
+                    foundPaths.add(path);
                 } else {
-                    RootShell.log(binaryName + " was NOT found here: " + where);
+                    RootShell.log(binaryName + " was NOT found here: " + path);
                 }
             }
         }
 
-        if (!found) {
-            RootShell.log("Trying third method");
+        Collections.reverse(foundPaths);
 
-            try {
-                List<String> paths = RootShell.getPath();
-
-                if (paths != null) {
-                    for (String path : paths) {
-                        if (RootShell.exists(path + "/" + binaryName)) {
-                            RootShell.log(binaryName + " was found here: " + path);
-                            list.add(path);
-                        } else {
-                            RootShell.log(binaryName + " was NOT found here: " + path);
-                        }
-                    }
-                }
-            } catch (Exception e) {
-                RootShell.log(binaryName + " was not found, more information MAY be available with Debugging on.");
-            }
-        }
-
-        Collections.reverse(list);
-
-        return list;
+        return foundPaths;
     }
 
     /**
@@ -520,6 +525,7 @@ public class RootShell {
         while (!cmd.isFinished()) {
 
             RootShell.log(version, shell.getCommandQueuePositionString(cmd));
+            RootShell.log(version, "Processed " + cmd.totalOutputProcessed + " of " + cmd.totalOutput + " output from command.");
 
             synchronized (cmd) {
                 try {

@@ -196,6 +196,10 @@ public class SanityCheckRootShell extends Activity
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ Checking Root ]\n");
             visualUpdate(TestHandler.ACTION_DISPLAY, result + " k\n\n");
 
+            result = RootShell.isBusyboxAvailable();
+            visualUpdate(TestHandler.ACTION_DISPLAY, "[ Checking Busybox ]\n");
+            visualUpdate(TestHandler.ACTION_DISPLAY, result + " k\n\n");
+
             visualUpdate(TestHandler.ACTION_PDISPLAY, "Testing file exists");
             visualUpdate(TestHandler.ACTION_DISPLAY, "[ Checking Exists() ]\n");
             visualUpdate(TestHandler.ACTION_DISPLAY, RootShell.exists("/system/sbin/[") + " k\n\n");
@@ -223,7 +227,7 @@ public class SanityCheckRootShell extends Activity
                     public void commandOutput(int id, String line)
                     {
                         visualUpdate(TestHandler.ACTION_DISPLAY, line + "\n");
-                        super.commandOutput(id, line);
+                        //super.commandOutput(id, line);
                     }
                 };
                 shell.add(cmd);
