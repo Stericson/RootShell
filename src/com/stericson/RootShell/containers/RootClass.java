@@ -33,8 +33,6 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
         STARTING, FOUND_ANNOTATION;
     }
 
-    ;
-
     public RootClass(String[] args) throws ClassNotFoundException, NoSuchMethodException,
             IllegalAccessException, InvocationTargetException, InstantiationException {
 
