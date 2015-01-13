@@ -148,7 +148,7 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
                 } catch (InterruptedException e) {
                 }
 
-                File rawFolder = new File("res/raw");
+                File rawFolder = new File("res" + File.separator + "raw");
                 if (!rawFolder.exists()) {
                     rawFolder.mkdirs();
                 }
@@ -157,14 +157,14 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
                 if (onWindows) {
                     cmd = new String[]{
                             "cmd", "/C",
-                            "dx --dex --output=res/raw/anbuild.dex "
+                            "dx --dex --output=res" + File.separator + "raw" + File.separator + "anbuild.dex "
                                     + builtPath + File.separator + "anbuild.jar"
                     };
                 } else {
                     cmd = new String[]{
                             getPathToDx(),
                             "--dex",
-                            "--output=res/raw/anbuild.dex",
+                            "--output=res" + File.separator + "raw" + File.separator + "anbuild.dex",
                             builtPath + File.separator + "anbuild.jar"
                     };
                 }
@@ -175,11 +175,11 @@ public class RootClass /* #ANNOTATIONS extends AbstractProcessor */ {
                 } catch (InterruptedException e) {
                 }
             }
-            System.out.println("All done. ::: anbuild.dex should now be in your project's res/raw/ folder :::");
+            System.out.println("All done. ::: anbuild.dex should now be in your project's res" + File.separator + "raw" + File.separator + " folder :::");
         }
 
         protected void lookup(File path, List<File> fileList) {
-            String desourcedPath = path.toString().replace("src/", "");
+            String desourcedPath = path.toString().replace("src" + File.separator, "");
             File[] files = path.listFiles();
             for (File file : files) {
                 if (file.isDirectory()) {
