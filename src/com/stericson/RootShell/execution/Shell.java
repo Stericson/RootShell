@@ -53,7 +53,7 @@ public class Shell {
     //this is only used with root shells
     public static enum ShellContext {
         NORMAL("normal"), //The normal context...
-        SHELL("u:r:shell:s0"), //Unpriviliged shell (such as an adb shell)
+        SHELL("u:r:shell:s0"), //Unprivileged shell (such as an adb shell)
         SYSTEM_SERVER("u:r:system_server:s0"), // system_server, u:r:system:s0 on some firmwares
         SYSTEM_APP("u:r:system_app:s0"), // System apps
         PLATFORM_APP("u:r:platform_app:s0"), // System apps
