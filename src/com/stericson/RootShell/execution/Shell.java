@@ -53,7 +53,7 @@ public class Shell {
     //this is only used with root shells
     public static enum ShellContext {
         NORMAL("normal"), //The normal context...
-        SHELL("u:r:shell:s0"), //Unprivileged shell (such as an adb shell)
+        SHELL("u:r:shell:s0"), //unprivileged shell (such as an adb shell)
         SYSTEM_SERVER("u:r:system_server:s0"), // system_server, u:r:system:s0 on some firmwares
         SYSTEM_APP("u:r:system_app:s0"), // System apps
         PLATFORM_APP("u:r:platform_app:s0"), // System apps
@@ -187,7 +187,7 @@ public class Shell {
             worker.join(this.shellTimeout);
 
             /**
-             * The operation could not be completed before the timeout occured.
+             * The operation could not be completed before the timeout occurred.
              */
             if (worker.exit == -911) {
 
@@ -651,7 +651,7 @@ public class Shell {
                     isReading = true;
 
                     /**
-                     * If we recieve EOF then the shell closed?
+                     * If we receive EOF then the shell closed?
                      */
                     if (outputLine == null) {
                         break;
@@ -983,7 +983,7 @@ public class Shell {
                         break;
                     }
 
-                    shell.error = "unkown error occured.";
+                    shell.error = "unknown error occurred.";
                 }
             } catch (IOException e) {
                 exit = -42;
