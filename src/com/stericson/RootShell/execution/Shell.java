@@ -997,9 +997,9 @@ public class Shell {
         }
 
         /*
-         * setOom for shell processes (sh and su if root shell)
-         * and discard outputs
-         *
+         * setOom for shell processes (sh and su if root shell) and discard outputs
+         * Negative values make the process LESS likely to be killed in an OOM situation
+         * Positive values make the process MORE likely to be killed in an OOM situation
          */
         private void setShellOom() {
             try {
