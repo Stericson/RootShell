@@ -398,6 +398,14 @@ public class RootShell {
     }
 
     /**
+     * @return <code>true</code> if ToyBox was found.
+     */
+    public static boolean isToyboxAvailable()
+    {
+        return (findBinary("toybox")).size() > 0;
+    }
+
+    /**
      * @return <code>true</code> if su was found.
      */
     public static boolean isRootAvailable() {
