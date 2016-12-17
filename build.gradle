@@ -2,6 +2,11 @@ buildscript {
     repositories {
         jcenter()
     }
+
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2' }
+    }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
@@ -12,8 +17,6 @@ repositories {
     jcenter()
 }
 
-apply from: 'https://gist.githubusercontent.com/larsgrefer/30b36bd74b162631f143/raw/d4155e673d7908193eb65f9bb6640250d7f282d8/git-version.gradle'
-
 apply plugin: 'com.android.library'
 
 android {
@@ -22,7 +25,7 @@ android {
 
     defaultConfig {
         minSdkVersion 11
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionName project.version
     }
 
@@ -35,38 +38,3 @@ android {
 dependencies {
     testCompile 'junit:junit:4.12'
 }
-
-apply plugin: 'com.github.dcendents.android-maven'
-
-android.libraryVariants.all { variant ->
-
-    if (variant.name.contains("release")) {
-        task("sources${variant.name.capitalize()}Jar", type: Jar) {
-            from variant.javaCompile.source
-            classifier = 'sources'
-        }
-
-        task("javadoc${variant.name.capitalize()}", type: Javadoc) {
-            description "Generates Javadoc for $variant.name."
-            source = variant.javaCompile.source
-            ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
-            classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
-            options.links("http://docs.oracle.com/javase/7/docs/api/");
-            options.links("http://developer.android.com/reference/");
-            options.addStringOption('Xdoclint:none', '-quiet')
-            failOnError false
-        }
-
-        task("javadoc${variant.name.capitalize()}Jar", type: Jar, dependsOn: "javadoc${variant.name.capitalize()}") {
-            description "Generates Javadoc Jar for $variant.name."
-            classifier = 'javadoc'
-            from tasks.findByPath("javadoc${variant.name.capitalize()}").destinationDir
-        }
-
-        artifacts {
-            archives tasks.findByPath("javadoc${variant.name.capitalize()}Jar")
-            archives tasks.findByPath("sources${variant.name.capitalize()}Jar")
-        }
-    }
-}
-
