@@ -413,11 +413,11 @@ public class RootShell {
     }
 
     /**
-     * @return <code>true</code> if BusyBox was found.
+     * @return <code>true</code> if BusyBox or Toybox was found.
      */
     public static boolean isBusyboxAvailable()
     {
-        return (findBinary("busybox", true)).size() > 0;
+        return (findBinary("busybox", true)).size() > 0 || (findBinary("toybox", true)).size() > 0;
     }
 
     /**
