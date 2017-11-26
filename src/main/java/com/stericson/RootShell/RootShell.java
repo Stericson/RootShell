@@ -45,7 +45,7 @@ public class RootShell {
 
     public static boolean debugMode = false;
 
-    public static final String version = "RootShell v1.4";
+    public static final String version = "RootShell v1.6";
 
     /**
      * Setting this to false will disable the handler that is used
@@ -375,6 +375,19 @@ public class RootShell {
      * @throws TimeoutException if this operation times out. (cannot determine if access is given)
      */
     public static boolean isAccessGiven() {
+        return isAccessGiven(0, 3);
+    }
+
+    /**
+     * Control how many time of retries should request
+     *
+     * @param timeout The timeout
+     * @param retries The number of retries
+     *
+     * @return <code>true</code> if your app has been given root access.
+     * @throws TimeoutException if this operation times out. (cannot determine if access is given)
+     */
+    public static boolean isAccessGiven(int timeout, int retries) {
         final Set<String> ID = new HashSet<String>();
         final int IAG = 158;
 
@@ -392,8 +405,9 @@ public class RootShell {
                 }
             };
 
-            Shell.startRootShell().add(command);
-            commandWait(Shell.startRootShell(), command);
+            Shell shell = Shell.startRootShell(timeout, retries);
+            shell.add(command);
+            commandWait(shell, command);
 
             //parse the userid
             for (String userid : ID) {
@@ -413,11 +427,23 @@ public class RootShell {
     }
 
     /**
-     * @return <code>true</code> if BusyBox or Toybox was found.
+     * @return <code>true</code> if BusyBox was found.
      */
     public static boolean isBusyboxAvailable()
     {
-        return (findBinary("busybox", true)).size() > 0 || (findBinary("toybox", true)).size() > 0;
+        return isBusyboxAvailable(false);
+    }
+
+    /**
+     * @return <code>true</code> if BusyBox or Toybox was found.
+     */
+    public static boolean isBusyboxAvailable(boolean includeToybox)
+    {
+        if(includeToybox) {
+            return (findBinary("busybox", true)).size() > 0 || (findBinary("toybox", true)).size() > 0;
+        } else {
+            return (findBinary("busybox", true)).size() > 0;
+        }
     }
 
     /**
