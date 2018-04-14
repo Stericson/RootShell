@@ -58,7 +58,8 @@ public class Shell {
         SYSTEM_APP("u:r:system_app:s0"), // System apps
         PLATFORM_APP("u:r:platform_app:s0"), // System apps
         UNTRUSTED_APP("u:r:untrusted_app:s0"), // Third-party apps
-        RECOVERY("u:r:recovery:s0"); //Recovery
+        RECOVERY("u:r:recovery:s0"), //Recovery
+        SUPERSU("u:r:supersu:s0"); //SUPER SU default
 
         private String value;
 
@@ -595,20 +596,24 @@ public class Shell {
                     if (write < commands.size()) {
                         isExecuting = true;
                         Command cmd = commands.get(write);
-                        cmd.startExecution();
-                        RootShell.log("Executing: " + cmd.getCommand() + " with context: " + shellContext);
 
-                        //write the command
-                        outputStream.write(cmd.getCommand());
-                        outputStream.flush();
+                        if(null != cmd)
+                        {
+                            cmd.startExecution();
+                            RootShell.log("Executing: " + cmd.getCommand() + " with context: " + shellContext);
 
-                        //write the token...
-                        String line = "\necho " + token + " " + totalExecuted + " $?\n";
-                        outputStream.write(line);
-                        outputStream.flush();
+                            //write the command
+                            outputStream.write(cmd.getCommand());
+                            outputStream.flush();
 
-                        write++;
-                        totalExecuted++;
+                            //write the token...
+                            String line = "\necho " + token + " " + totalExecuted + " $?\n";
+                            outputStream.write(line);
+                            outputStream.flush();
+
+                            write++;
+                            totalExecuted++;
+                        }
                     } else if (close) {
                         /**
                          * close the thread, the shell is closing.
