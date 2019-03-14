@@ -297,7 +297,7 @@ public class RootShell {
      */
     public static Shell getCustomShell(String shellPath, int timeout) throws IOException, TimeoutException, RootDeniedException
     {
-        return Shell.getCustomShell(shellPath, timeout);
+        return Shell.startCustomShell(shellPath, timeout);
     }
 
     /**
